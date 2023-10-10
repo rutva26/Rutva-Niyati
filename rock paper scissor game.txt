@@ -1,0 +1,119 @@
+#include<iostream>
+#include <cstdlib> 
+#include<ctime>
+using namespace std;
+int rock=1;
+int paper=2;
+int scissors=3;
+int u_choice;
+int c;
+int  userScore = 0, computerScore =0;
+char playAgain;
+int main()
+{
+srand(time(NULL));
+cout<<"==========================================================="<<endl;
+cout<<"welcome to our small ROCK,PAPER AND SCISSORS Game"<<endl;
+cout<<"==========================================================="<<endl;
+do{
+cout<<endl<<"........1) rock..........✊........"<<endl;
+cout<<endl<<"2) paper........✋........"<<endl;
+cout<<endl<<"3) scissors......✌......."<<endl;
+cin>>u_choice;
+cout<<"users choice"<<endl;
+switch(u_choice)
+{
+case 1:
+{
+  cout<<rock;
+  break;
+}
+case 2:
+{
+   cout<<paper;
+   break;
+}
+case 3:
+{
+  cout<<scissors;
+  break;
+}
+default:
+{
+  cout<<"This is not valid";
+  break;
+}
+}
+
+cout<<endl<<"computers choice"<<endl;
+c=rand()%3+1;
+switch(c)
+{
+case 1:
+{
+  cout<<rock;
+  break;
+}
+case 2:
+{
+   cout<<paper;
+   break;
+}
+case 3:
+{
+  cout<<scissors;
+  break;
+}
+default:
+{
+  cout<<"This is not valid";
+  break;
+}
+}
+if (u_choice ==1 && c==2)
+{
+        cout<<endl<< "Computer Wins,Paper wraps Rock."<< endl;
+        computerScore++;
+    }
+    else if (u_choice ==2 && c==3)
+    {
+        cout<<endl << "Computer Wins,Scissors cut Paper."<< endl;
+       computerScore++;
+    }
+    else if (u_choice ==3 && c==1)
+    {
+        cout<<endl << "Computer Wins,Rock smashes Scissors."<< endl;
+      computerScore++; 
+    }
+    else if (u_choice ==1 && c== 3)
+    {
+        cout<<endl << "You Win,Paper wraps Rock."<< endl;
+        userScore++;
+    }
+    else if (u_choice ==2 && c==1)
+    {
+        cout<<endl << "You Win,Paper wraps Rock."<< endl;
+         userScore++;
+    }
+    else if (u_choice ==3&& c==2)
+    {
+        cout<<endl<< "You Win,Scissors cut Paper."<< endl;
+         userScore++;
+    }
+    else{
+        cout<<endl << "it's a tie,Play again win the Game." << endl;
+    }
+    cout << "Your Score: " << userScore << "\n";
+    cout << "Computer Score: " << computerScore << "\n";
+
+    cout << "Do you want to play again? (y/n): ";
+        cin >> playAgain;
+}while(playAgain == 'y' || playAgain == 'Y');
+cout<<"-----------------------------------------"<<endl;  
+cout<<"you can draw match from astart"<<endl;
+cout<<"-----------------------------------------"<<endl;
+cout<<"************MADE BY RUTVA KANAIYA AND NIYATI PUROHI*************";
+return 0;
+}
+
+
